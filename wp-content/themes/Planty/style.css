@@ -1,11 +1,13 @@
 /*
-Theme Name: OceanWP Child Theme
-Theme URI: https://oceanwp.org/
-Description: OceanWP WordPress theme. Sample child theme.
-Author: OceanWP
-Author URI: https://oceanwp.org/
-Template: oceanwp
-Version: 1.0
+Theme Name:     Planty
+Theme URI:      https://github.com/tidythemes/blankslate
+Author:         Karim TIOURI IDRISSI
+Author URI:     https://github.com/tidythemes
+Description:    Ce thème est un thème enfant de Blankslate pour le projet 6 de la formation Développeur WordPress "Planty"
+Tags:           child-theme, blankslate, vanilla
+Template:       blankslate
+Version:        1.0.0
+License:        GNU General Public License v3 or Later
+License URI:    https://www.gnu.org/licenses/gpl.html
+Text Domain:    blankslate
 */
-
-/* Parent stylesheet should be loaded from functions.php not using @import */
