@@ -107,6 +107,9 @@ footer {
 
 /* ----------------------------------------------- */
 
+.pas-de-border {
+    border-radius: 0 0 0 0 !important;
+}
 
 /* CSS de l'image de la canette */
 .canette-container {
@@ -151,13 +154,6 @@ footer {
 }
 
 .groupe-fruits {
-    /* display: flex;
-    flex-wrap: wrap !important;
-    justify-content: center;
-    padding-left: 300px;        ancienne méthode pour la postérité
-    gap: 30px;
-    margin-bottom: 10px;
-    gap: 30px; */
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 40px;
@@ -203,8 +199,12 @@ footer {
 
 
 /* ------------------------------CSS de la page "NOUS RENCONTRER"------------------------------ */
-.wp-container-4 {
+.wp-container-3 {
     border-radius: 50% / 0% 0% 22% 22%;
+}
+
+.titre-rencontrer {
+    padding-top: 170px;
 }
 /* CSS de la section "ÉQUIPE" */
 .equipe-container {
@@ -224,8 +224,9 @@ footer {
 .fleur {
     position: absolute;
     width: 145.3px;
-    right: 79%;
-    top: -77px;
+    height: 150.26px;
+    right: 82%;
+    top: 77px;
 }
 
 .feuille-container {
@@ -248,13 +249,20 @@ footer {
 .form-container {
     position: relative;
     z-index: 1;
+    max-width: 389px;
 }
 
-.wpcf7-text, .wpcf7-email {
+.wpcf7-validates-as-required {
     border-radius: 7px;
     border: 1px solid #ECE2DA !important;
     width: 383px;
     height: 71px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.wpcf7-validates-as-required:focus-visible {
+    outline: 0;
 }
 
 .wpcf7-textarea {
@@ -263,11 +271,6 @@ footer {
     width: 383px;
     height: 237px;
     resize: none;
-}
-
-.form-contacter label {
-    font-size: 20px;
-    font-weight: 400;
 }
 
 .envoyer {
@@ -290,9 +293,10 @@ footer {
     position: absolute;
     z-index: -1;
     width: 147.32px;
-    bottom: 60px;
-    right: 310px;
+    top: 180px;
+    left: -70px;
 }
+
 /* ----------------------------------------------- */
 /* -------------------------------------------------------------------------------------------------- */
 
@@ -321,68 +325,66 @@ footer {
     margin: 0 auto;
 }
 
-.container-fruits-commander {
-    display: flex;
-    width: 53.75em;
-    margin: 0 auto;
-    gap: 25px;
-}
-
-.formulaire {
-    width: 860px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 20px;
-    padding-top: 35px;
-    padding-bottom: 10px;
-}
-
-.form-commander p:nth-child(3) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-
-.label-titre {
-    font-size: 30px;
-    font-weight: 700;
-}
-
-.label-soustitre {
-    font-size: 20px;
-    font-weight: 400;
-}
-
-.bordure {
-    border-right: 1px solid #FFFFFF;
-    padding-right: 42px;
-}
-
-.bordure-form {
-    padding-left: 42px;
-}
+/* CSS de la <section> COMPTEUR-BOUTONS */
 
 .compteur-boutons {
-    display: flex;
     width: 860px;
     margin: 0 auto;
-    gap: 23px;
     border-bottom: 1px solid #FFFFFF;
     padding-bottom: 25px;
 }
 
+.container-fruits-commander {
+    display: flex;
+    gap: 25px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.container-fruits-commander img {
+    width: 196px;
+}
+
 .quatre-boutons {
     display: flex;
-    flex-direction: row;
     gap: 11px;
+    padding-bottom: 10px;
+}
+
+.gauche {
+    display: flex;
 }
 
 .compteur {
     font-family: 'Inter';
     width: 51px;
-    height: 56px; 
-    border-radius: 5px 0 0 5px;
+    height: 58px; 
+    border-radius: 8px 0 0 8px;
     font-size: 16px;
+    border: 0;
+}
+
+.compteur::placeholder {
+    text-align: center;
+}
+
+.compteur:focus-visible {
+    outline: 0;
+}
+
+.plusmoins {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+.moins, .plus {
+    cursor: pointer;
 }
 
 .plus button {
@@ -395,6 +397,12 @@ footer {
     color: #FFFFFF;
 }
 
+.plus button:hover {
+    background-color: #C02E44;
+    cursor: pointer;
+    font-size: 25px;
+}
+
 .moins button {
     width: 31px;
     height: 30px;
@@ -404,9 +412,15 @@ footer {
     color: #FFFFFF;
 }
 
+.moins button:hover {
+    background-color: #C02E44;
+    cursor: pointer;
+    font-size: 20px;
+}
+
 .ok {
     width: 99px;
-    height: 59.5px;
+    height: 60px;
     border-radius: 5px;
     border: 0;
     background-color: #E0B9B4;
@@ -416,20 +430,47 @@ footer {
 
 .ok:hover {
     background-color: #C02E44;
+    cursor: pointer;
 }
 
-.gauche {
-    display: flex;
+
+/* CSS de la <section> FORMULAIRE */
+
+.formulaire {
+    width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    padding-top: 50px;
+    padding-bottom: 10px;
 }
 
-.plusmoins {
+.label-titre {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 30px;
+}
+
+.label-soustitre {
+    font-size: 20px;
+    font-weight: 400;
     position: relative;
 }
 
-.moins {
-    position: absolute;
-    bottom: 0;
+.bordure {
+    display: flex;
+    border-right: 1px solid #FFFFFF;
+    padding-right: 42px;
+    flex-direction: column;
 }
+
+.bordure-form {
+    display: flex;
+    padding-left: 42px;
+    flex-direction: column;
+}
+/* ----------------------------------------------- */
 /* -------------------------------------------------------------------------------------------------- */
 
 
@@ -438,6 +479,144 @@ footer {
 
 
 /* ------------------------------CSS de la responsive------------------------------ */
-@media screen and (max-width:767px) {
-    .feuille-droite,.feuille-gauche {display: none;}
+@media screen and (max-width:992px) {
+        .groupe-fruits {
+            display: grid; 
+            grid-template-columns: none; 
+            margin: auto 0;
+        }
+
+        .photo-p {
+            width: 100px;
+        }
+    }
+
+
+@media screen and (max-width:768px) {
+        .menu-planty .menu-ul li:last-child {
+            padding: 30px 30px;
+        }
+
+        .container-photo-p {
+            flex-direction: column;
+            gap: 50px
+        }
+
+        .fleur,.feuille {
+            display: none;
+        }
+
+        .votre-commande-container {
+            display: flex;
+            justify-content: center;
+            width: auto;
+        }
+
+        .compteur-boutons {
+            width: auto !important;
+        }
+
+        .container-fruits-commander {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container-fruits-commander img {
+            width: auto;
+        }
+
+        .card {
+            gap: 8px;
+        }
+
+        .quatre-boutons {
+            justify-content: space-between;
+        }
+
+        .ok {
+            width: 200px;
+            height: 60px;
+        }
+
+        .plusmoins {
+            flex-direction: row;
+        }
+
+        .plus button {
+            width: 60px;
+            height: 60px;
+            border-bottom: 0;
+            border-right: 1px solid #FFFFFF;
+            border-radius: 0 0 0 0;
+        }
+
+        .moins button {
+            width: 60px;
+            height: 60px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .label-titre {
+            display: flex;
+            justify-content: center;
+        }
+
+        .formulaire {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+        }
+
+        .bordure {
+            border-right: 0;
+            padding-right: 0;
+            padding-bottom: 40px;
+        }
+
+        .bordure-form {
+        padding-left: 0;  
+        }
+
+        .label-soustitre {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+    }
+
+@media screen and (max-width:690px) {
+        .logo img {
+            max-width: 150px;
+            padding-left: 10px;
+        }
+
+        .menu-planty .menu-ul li {
+            margin-right: 10px;
+        }
+
+        .menu-planty .menu-ul li:last-child {
+            padding: 30px 10px;
+        }
+}
+
+@media screen and (max-width:576px) {
+        .titre-rencontrer {
+            padding-top: 70px;
+        }
+
+        .feuille-droite,.feuille-gauche {
+            display: none;
+        }
+
+        .container-photo-p {
+            flex-direction: column;
+        }
+}
+
+@media screen and (max-width:500px) {
+        .logo img {
+            max-width: 100px;
+            padding-left: 10px;
+        }
 }
