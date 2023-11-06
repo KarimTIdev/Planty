@@ -583,7 +583,16 @@ footer {
             flex-direction: column;
             position: relative;
         }
+
+        .plante {
+            display: none;
+        }
+
+        .ligne-canettes {
+            display: none;
+        }
     }
+
 
 @media screen and (max-width:690px) {
         .logo img {
@@ -619,4 +628,38 @@ footer {
             max-width: 100px;
             padding-left: 10px;
         }
+}
+
+@media screen and (max-width:470px) {
+    .responsive-xs {
+        font-size: 30px !important;
+    }
+
+    .les-gouts {
+        font-size: 25px !important;
+    }
+
+    .texte-accueil {
+        font-size: 18px !important;
+    }
+}
+
+@media screen and (max-width:426px) {
+    .menu-ul li {
+        font-size: 12px !important;
+    }
+    .responsive-xs {
+        font-size: 30px !important;
+    }
+
+    .les-gouts {
+        font-size: 25px !important;
+    }
+
+    .texte-accueil {
+        font-size: 18px !important;
+    }
+    .menu-planty .menu-ul li:last-child {
+        padding: 35px 10px 30px 10px;
+    }
 }
